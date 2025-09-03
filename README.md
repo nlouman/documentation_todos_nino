@@ -13,7 +13,7 @@ There are three things that I would say are on the top of the list:
 1. Developing a Docker for the GoPro camera. Robin and Lilian need this by end of October.
 2. Improving usability of the pipeline. There are so many small things to here that it's difficult to define a concrete goal. Going through my points [here](orx_interface/TODOS.md) might provide a good start.
 - The two points above are very good starting points to get familiar with the codebase.
-3. Finish timesyncing. Refer to [here](ptp_timesyncing/overview.md) to see what's left to do.
+3. Finish timesyncing. Refer to [here](ptp_timesyncing/ptp_vision.md) to see what's left to do.
 
 ## Datahub Usability
 
