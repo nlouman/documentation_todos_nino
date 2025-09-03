@@ -1,0 +1,4 @@
+# Checking Rocsync Synchronization
+Based on the work that has been done on PTP timesyncing (please read relevant document(s) first), Lilian suggested a way to check the quality of the timesyncing provided by the RocSync:
+- We can set up two FusionTrack 500 sensors, connected to the same datahub and synced to within microseconds of each other, and then use the RocSync to "synchronize" them. You can compare whether the RocSync accurately assigns the timestamps as it should, i.e. the same ROS timestamp on both devices should be assigned the same RocSync timestamp in all cases.
+- For this, switch in the two ethernet SFP28 modules we have into the network card of one of the development datahubs and make sure you have the newest docker. Differentiate between the two cameras using the config, check the ROCS Wiki or official documentation on how to do that in case any issues arise. 

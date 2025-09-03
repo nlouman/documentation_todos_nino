@@ -1,0 +1,7 @@
+# Timesyncing Vision for the OR-X
+
+For an overview of what is already here, check `orx_middleware/docs/ptp_timesyncing.md`. There are two main avenues for further development:
+
+1) Setting up the DGX to support PTP and to advertise itself as the grandmaster. This will require collaborating with Nicholas Büngert from IT.
+2) Datahubs automatically assigning themselves a role and starting to sync. This would be really cool - you just plug in a device and it will automatically know the best method to synchronize itself and use that. The main issue with this is that it needs to be flexible enough to handle all possible configurations that you might have at the OR-X or elsewhere, so DH-to-DH syncing, DH-to-workstation, DH-to-DGX, and so on. And secondly, the interfaces on the DHs (i.e. `eth1`, `eth2` and so on) can change names and roles, i.e. you will not always plug in the top port of the NIC on the DH into another DH/to the LAN of the OR-X and the bottom port to, say, a fusionTrack, but it might also be the other way around. So on a datahub you need to, for each new connection, recognize the connected device, correctly set up that interface, add that information to what you know from the other connections, and then determine your role in the whole network and whether you can use PTP or not.
+W.r.t to the PTP timesyncing the BMCA algorithm automatically chooses the best clock in a system as master, which could help set up a truly distributed system.
